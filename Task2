@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class DiscountLossReport {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Sample item prices
+        int[] itemIDs = {5001, 5002, 5003, 5004, 5005};
+        double[] itemPrices = {100, 150, 200, 250, 300}; // matching index
+
+        double totalDiscount = 0.0;
+
+        System.out.print("Enter number of transactions: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter Item ID: ");
+            int id = sc.nextInt();
+            System.out.print("Enter Quantity: ");
+            int qty = sc.nextInt();
+
+            // Find item index and price
+            int index = -1;
+            for (int j = 0; j < itemIDs.length; j++) {
+                if (itemIDs[j] == id) {
+                    index = j;
+                    break;
+                }
+            }
+
+            if (index == -1) {
+                System.out.println("Invalid Item ID!");
+                continue;
+            }
+
+            double price = itemPrices[index];
+            double discount = 0.0;
+
+            // Check if discount applies
+            if (id == 5004 || id == 5005) {
+                discount = 0.20 * price * qty;
+            }
+
+            totalDiscount += discount;
+        }
+
+        System.out.println("Total discount amount given today: Rs." + (int)totalDiscount);
+    }
+}
