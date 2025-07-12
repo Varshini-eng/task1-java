@@ -1,0 +1,38 @@
+package Sample;
+import java.util.Scanner;
+public class Task {
+
+	public static void main(String[] args) {
+		int price;
+	   Scanner id=new Scanner(System.in);
+	   int id_no=id.nextInt();
+	   Scanner quan=new Scanner(System.in);
+	   int quantity=quan.nextInt();
+	   
+	   
+	   
+	   switch (id_no)
+	   {
+	       case 5001:
+	    	    price=30;
+	    	    System.out.printf("Item 5001 - Price :%d - Discount : Yes",price*quantity);
+	    	    break;
+	       case 5002:
+	    	    price=53;
+	    	    System.out.printf("Item 5002 - Price : %d - Discount :Yes",price*quantity);
+	    	    break;
+	       case 5003:
+	    	    price=25;
+	    	    System.out.printf("Item 5003 - Price : %d - Discount :Yes",price*quantity);
+	    	   break;
+	       case 5004:
+	    	    price=30;
+	    	    System.out.printf("Item 5004 - Price : %d - Discount :Yes",price*quantity);
+	    	    break;
+	    	   
+	       default:
+	    	   System.out.println("Invalid item id");
+	   }
+	}
+
+}
